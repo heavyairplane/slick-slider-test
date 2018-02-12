@@ -17,7 +17,6 @@ const https = require("https"),
   fs = require("fs");
   */
 
-
 var name = "Sandra Agudosi";
 
 //View engine
