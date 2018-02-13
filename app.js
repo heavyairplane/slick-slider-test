@@ -11,6 +11,7 @@ const session = require('express-session');
 const flash = require('express-flash');
 const helmet = require('helmet');
 const csrf = require('csurf');
+const PORT = process.env.PORT || 3000;
 
 /* encryption stuff
 const https = require("https"),
@@ -92,8 +93,6 @@ app.get('*', function(req, res){
 
 app.post('/contact', [
   check('name')
-    .isLength({ min: 1})
-    .withMessage('Name is required')
     .trim(),
   check('message')
     .isLength({ min: 1})
@@ -139,6 +138,6 @@ app.use(function(req,res,next){
 });
 */
 
-app.listen(3000, function(){
-    console.log('Server running on Port 3000...');
+app.listen(PORT, function(){
+    console.log('Server running on Port ' + PORT + "...");
 })
