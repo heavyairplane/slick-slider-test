@@ -94,15 +94,16 @@ app.get('*', function(req, res){
 app.post('/contact', [
   check('name')
     .trim(),
+    check('email')
+      .isEmail()
+      .withMessage('That email doesn‘t look right')
+      .trim()
+      .normalizeEmail(),
   check('message')
     .isLength({ min: 1})
     .withMessage('Message is required')
     .trim(),
-  check('email')
-    .isEmail()
-    .withMessage('That email doesn‘t look right')
-    .trim()
-    .normalizeEmail(),
+
 ], function(req, res) {
    const errors = validationResult(req);
   //  console.log("Post Attempting");
