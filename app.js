@@ -2,6 +2,11 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
 var app = express();
+var nodemailer = require('nodemailer');
+var fs = require('fs');
+var config = require('./config.js');
+
+
 const router = express.Router();
 const validator = require('express-validator');
 const { check, validationResult } = require('express-validator/check');
@@ -19,6 +24,20 @@ const https = require("https"),
   */
 
 var name = "Sandra Agudosi";
+
+let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    secure: false,
+    port: 25,
+    auth: {
+        user: config.email,
+        pass: config.password
+    },
+    tls: {
+        rejectUnauthorized: false
+    }
+});
+
 
 //View engine
 app.set('view engine', 'ejs');
@@ -118,6 +137,24 @@ app.post('/contact', [
     }
  const data = matchedData(req)
  console.log('Sanitized: ', data)
+
+ let HelperOptions = {
+     from: '"Joshua Oseh" <joshuaoseh@gmail.com>',
+     to: 'joshuaoseh@gmail.com',
+     subject: 'Website Contact from ' + data.email,
+     text: data.message + "\n \n From: " + data.name
+ };
+
+
+ transporter.sendMail(HelperOptions, (error, info) => {
+  if(error){
+   return  console.log(error);
+     }
+
+     console.log("message sent");
+     console.log(info);
+ });
+
  req.flash('success', 'Thanks for the message! I‘ll be in touch :)');
  res.redirect('/contact-after');
 
