@@ -105,9 +105,8 @@ app.get('/contact-after', function(req,res){
 
 //The 404 Route (ALWAYS Keep this as the last route)
 app.get('*', function(req, res){
-  res.status(404).render('index',{
-    title: name + ' - Portfolio'
-  });
+       console.log("error 404");
+  res.status(404).send("error");
 });
 
 app.post('/contact', [

@@ -83,8 +83,9 @@ a {
     color: black;
 }
 img.spinner {
-background-image: url("gif/spinner.gif");
-background-color: transparent;}
+background: url("../gif/spinner.gif") no-repeat center transparent;
+background-size: 2vh;
+}
 
 /* Add a black background color to the top navigation */
 .topnav {
@@ -236,4 +237,24 @@ textarea{
 
 .form-header{
     font-family: "Arial";
+}
+
+.btn {
+    background-color: lightblue;
+    border: none;
+    color: black;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.btn:hover {
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
 }
