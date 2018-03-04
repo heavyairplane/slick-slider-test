@@ -1,4 +1,3 @@
-//slick params
 $('.variable-width').slick({
   dots: false,
   infinite: false,
@@ -6,7 +5,7 @@ $('.variable-width').slick({
   centerMode: false,
   variableWidth: true,
   arrows: false,
-  slidesToShow: 1,
+  slidesToShow: 10,
   slidesToScroll: 1,
   autoplay: false,
   accessibility: true
@@ -16,7 +15,6 @@ $(window).on('resize orientationchange', function() {
 $('.js-slider').slick('resize');
 });
 
-//make dropdown
 function myFunction() {
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
@@ -26,11 +24,8 @@ function myFunction() {
     }
 }
 
-//make active links
 $(function() {
   if (location.pathname !== '/') {
   $('div a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
   }
 });
-
-document.getElementById("myCarousel").focus();

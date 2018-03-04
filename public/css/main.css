@@ -1,18 +1,22 @@
-@media only screen and (orientation: portrait) {
-.test {
-width: 100vw;
-height: 60vh;
-top: 16vh;}
+
+#myCarousel{
+padding-right: 2vw;
+}
+
+.slick-track { overflow-x: scroll; }
 
 .test-img {
 max-height: 100%;
-max-width: 100vw;}
+max-width: 100%;
+}
 
-.slick-slide {
-margin: 0 1vw;}
+@media only screen and (orientation: portrait) {
+  .test {
+  height: 60vh;
+  top: 16vh;
+  }
 
 .contact-row{
-/*  border: solid;*/
   padding-top: 5vw;
   padding-left: 5vw;
   padding-right: 15vw;}
@@ -28,11 +32,10 @@ margin: 0 1vw;}
   color: white;}
 
  @media only screen and (max-width: 600px){
-.contact-row{
-/*  border: solid;*/
-  padding-top: 3vh;
-  padding-left: 5vw;
-  padding-right: 5vw;}
+  .contact-row{
+    padding-top: 3vh;
+    padding-left: 5vw;
+    padding-right: 5vw;}
 
 .contact-row:after {
     content: "";
@@ -46,20 +49,14 @@ margin: 0 1vw;}
 }
 }
 
-
-
 @media only screen and (orientation: landscape) {
-.test {
-height: 60vh;
-width: 99vw;
-top: 15vh;}
-
-.test-img {height: 100%;}
-.slick-slide {
-margin: 0 0.4vw;}
+  .test {
+  height: 60vh;
+  top: 4vh;
+  }
 
 .contact-row{
-/*  border: solid;*/
+
   padding-top: 3vh;
   padding-left: 20vw;
   padding-right: 20vw;}
@@ -83,9 +80,8 @@ a {
     color: black;
 }
 img.spinner {
-background: url("../gif/spinner.gif") no-repeat center transparent;
-background-size: 2vh;
-}
+background-image: url("gif/spinner.gif");
+background-color: transparent;}
 
 /* Add a black background color to the top navigation */
 .topnav {
@@ -95,43 +91,43 @@ overflow: hidden;}
   float:left;
 }
 .column-25 {
-width: 15%;
-text-align: right;
-padding: 7px 14px;}
+width: 40%;
+text-align:left;
+border: solid;}
 
 .column-75 {
-width: 75%;
-}
+width: 57%;
+border: solid;}
 
 /* Clear floats after the columns */
 .row{
-/*  border: solid;*/
+
 }
 .row:after {
     content: "";
     display: table;
-    clear: both;
-}
+    clear: both;}
 
 .logo{
-
+  position: fixed;
+border: dashed;
 }
 /* Style the links inside the navigation bar */
 .topnav{
-padding-left: 40vw;
-background-color: white;
+position: fixed;
+/*padding-left: 40vw; */
 
-}
+border: dotted;}
 
 .topnav a {
 float: left;
 display: block;
 color: black;
 text-align: center;
-padding: 14px 14px;
+padding: 20px 16px;
 text-decoration: none;
-font-size: 14px;
-/*  border: solid;*/}
+font-size: 18px;
+border: dotted;}
 
 /* Change the color of links on hover */
 .topnav a:hover {
@@ -237,24 +233,4 @@ textarea{
 
 .form-header{
     font-family: "Arial";
-}
-
-.btn {
-    background-color: lightblue;
-    border: none;
-    color: black;
-    padding: 10px 25px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-}
-
-.btn:hover {
-  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
-  text-decoration: none;
 }

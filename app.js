@@ -87,6 +87,12 @@ app.get('/about', function(req,res){
     });
 });
 
+app.get('/test', function(req,res){
+    res.render('routes/test', {
+      title: name + ' - test'
+    });
+});
+
 app.get('/contact', function(req,res,err){
     res.render('routes/contact' , {
       title: name + ' - Contact',
@@ -105,8 +111,9 @@ app.get('/contact-after', function(req,res){
 
 //The 404 Route (ALWAYS Keep this as the last route)
 app.get('*', function(req, res){
-       console.log("error 404");
-  res.status(404).send("error");
+  res.status(404).render('index',{
+    title: name + ' - Portfolio'
+  });
 });
 
 app.post('/contact', [
@@ -162,9 +169,7 @@ app.post('/contact', [
 //error handling go to home
 app.use(function (err, req, res, next) {
   console.error(err.stack);
-  res.status(500).render('index',{
-    title: name + ' - Portfolio'
-  });
+  res.status(500).send("error500");
 })
 
 /*

@@ -1,0 +1,35 @@
+<% include ../partials/head %>
+<% include ../partials/topnav %>
+
+
+<style type="text/css">
+    .scroll{
+        /*width: 600px;*/
+
+        padding-top: 20vh;
+      height: 60vh;
+      white-space: nowrap;
+
+    }
+
+
+
+    .scroll-img{
+        height: 100%;
+        margin-right: 10px;
+        display: inline;
+    }
+</style>
+
+
+<div class="scroll">
+
+  <% for (var i = 1; i<=15;i++){%>
+<img class="scroll-img" src="images/img_<%= i%>.jpg"></img><%}%>
+
+
+</div>
+
+
+
+<% include ../partials/bottom %>
