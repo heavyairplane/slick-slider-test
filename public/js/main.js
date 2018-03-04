@@ -5,8 +5,11 @@ $('.variable-width').slick({
   centerMode: false,
   variableWidth: true,
   arrows: false,
+<<<<<<< HEAD
   slidesToShow: 10,
   slidesToScroll: 1,
+=======
+>>>>>>> parent of f3e0183... carousel
   autoplay: false,
   accessibility: true
 });
