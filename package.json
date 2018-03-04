@@ -15,8 +15,7 @@
     "express-flash": "0.0.2",
     "cookie-parser": "1.4.3",
     "helmet": "3.11.0",
-    "csurf": "1.9.0",
-    "nodemailer": "4.4.2"
+    "csurf": "1.9.0"
   },
   "author": "heavyairplane",
   "license": "ISC"
